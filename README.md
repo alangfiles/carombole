@@ -43,3 +43,14 @@ def bankedOffWall(ballLocation):
   if ballLocation[1]/2 > 1:
     return true
   return false
+  
+  
+  
+  ===================
+  Try 2
+  
+  for(x,y) from (0,0)->(1,1)
+    for m from 0 -> inf
+      y=mx+b
+      findIntegerIntersection()
+      
