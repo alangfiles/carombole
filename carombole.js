@@ -3,12 +3,13 @@ function carombole()
 {
 
   var x = 0.0;
-  var y = 0.0;
+  var y = 0.01;
   var slopeDegree = 0;
 
   var resultsArray = new Array();
   var numberOfResults = 0;
   var resultSum = 0;
+  var numberOfInfiniteBanks = 0;
 
   while (x<1.0)
   {
@@ -16,7 +17,15 @@ function carombole()
     {
       while (slopeDegree < 360)
       {
-        resultSum += getIntegerIntersection(x,y,slopeDegree, 0);
+        var result =  getNumberOfBounces(x,y,slopeDegree, 0);
+
+        if(result == 999)
+        {
+          numberOfInfiniteBanks++;
+        }
+        else{
+          resultSum += result;
+        }
         numberOfResults += 1;
 
         slopeDegree += 1;
@@ -35,9 +44,9 @@ function carombole()
 
 function getNumberOfBounces(x,y,slopeDegree, tries)
 {
-  if(tries > 200)
+  if(tries > 30)
   {
-    return 0;
+    return 999;
   }
   var xLocal = x;
   var yLocal = y;
@@ -63,7 +72,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
 
 function isInAPocket(x, y)
 {
-  if((x%1 == 0) || (y%1==0))
+  if((x%1 == 0) && (y%1==0))
   {
     return true;
   }
