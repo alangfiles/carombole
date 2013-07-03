@@ -1,4 +1,3 @@
-
 function carombole()
 {
 
@@ -72,7 +71,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
 
 function isInAPocket(x, y)
 {
-  if((x%1 == 0) && (y%1==0))
+  if(((x%1 == 0)<0.01) && ((y%1==0)<0.01))
   {
     return true;
   }
