@@ -77,7 +77,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
 
 function isInAPocket(x, y)
 {
-  if((x%1 < 0.0001) && (y%1<0.0001))
+  if((x%1 < 0.001) && (y%1<0.001))
   {
     return true;
   }
