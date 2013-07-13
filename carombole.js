@@ -54,7 +54,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
   var slope = Math.tan(slopeDegree);
   if(isInAPocket(xLocal,yLocal))
   {
-    numberOfBounces = Math.floor(x%2+y);
+    numberOfBounces = Math.abs(Math.floor(x%2+y));
     return numberOfBounces;
   }
   else{
