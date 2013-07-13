@@ -18,7 +18,7 @@ function carombole()
     {
       while (slopeDegree < 360)
       {
-        var result =  getNumberOfBounces(x,y,slopeDegree, 0);
+        var result =  getNumberOfBounces(x,y,slopeDegree, precision, 0);
 
         if(result == 999)
         {
@@ -48,7 +48,7 @@ function carombole()
 
 }
 
-function getNumberOfBounces(x,y,slopeDegree, tries)
+function getNumberOfBounces(x, y, slopeDegree, precision, tries)
 {
   if(tries > 300)
   {
@@ -56,7 +56,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
   }
   var xLocal = x;
   var yLocal = y;
-  var stepSize = 0.001;
+  var stepSize = precision;
   var numberOfBounces = 0;
   var slope = Math.tan(slopeDegree);
   if(isInAPocket(xLocal,yLocal))
@@ -70,7 +70,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
     yLocal = y+(stepSize*slope);
     tries++;
 
-    return getNumberOfBounces(xLocal,yLocal,slopeDegree, tries);
+    return getNumberOfBounces(xLocal,yLocal,slopeDegree, precision, tries);
   }
 
   
