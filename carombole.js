@@ -49,7 +49,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
   }
   var xLocal = x;
   var yLocal = y;
-  var stepSize = 0.1;
+  var stepSize = 0.01;
   var numberOfBounces = 0;
   var slope = Math.tan(slopeDegree);
   if(isInAPocket(xLocal,yLocal))
@@ -71,7 +71,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
 
 function isInAPocket(x, y)
 {
-  if(((x%1 == 0)<0.01) && ((y%1==0)<0.01))
+  if((x%1 < 0.001) && (y%1<0.001))
   {
     return true;
   }
