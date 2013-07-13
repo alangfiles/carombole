@@ -10,6 +10,7 @@ function carombole()
   var numberOfValidResults = 0;
   var resultSum = 0;
   var numberOfInfiniteBanks = 0;
+  var precision = 0.01;
 
   while (x<1.0)
   {
@@ -60,7 +61,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
   var slope = Math.tan(slopeDegree);
   if(isInAPocket(xLocal,yLocal))
   {
-    numberOfBounces = Math.abs(Math.floor(x%2+y));
+    numberOfBounces = Math.floor(Math.abs(x%2)+Math.abs(y));
     return numberOfBounces;
   }
   else{
