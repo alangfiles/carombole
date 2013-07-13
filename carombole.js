@@ -2,11 +2,12 @@ function carombole()
 {
 
   var x = 0.0;
-  var y = 0.01;
+  var y = 0.0;
   var slopeDegree = 0;
 
   var resultsArray = new Array();
   var numberOfResults = 0;
+  var numberOfValidResults = 0;
   var resultSum = 0;
   var numberOfInfiniteBanks = 0;
 
@@ -24,6 +25,7 @@ function carombole()
         }
         else{
           resultSum += result;
+          numberOfValidResults++;
         }
         numberOfResults += 1;
 
@@ -37,19 +39,19 @@ function carombole()
     x+= 0.01;
   }
 
-  return resultSum/numberOfResults;
+  return resultSum/numberOfValidResults;
 
 }
 
 function getNumberOfBounces(x,y,slopeDegree, tries)
 {
-  if(tries > 30)
+  if(tries > 300)
   {
     return 999;
   }
   var xLocal = x;
   var yLocal = y;
-  var stepSize = 0.01;
+  var stepSize = 0.001;
   var numberOfBounces = 0;
   var slope = Math.tan(slopeDegree);
   if(isInAPocket(xLocal,yLocal))
@@ -71,7 +73,7 @@ function getNumberOfBounces(x,y,slopeDegree, tries)
 
 function isInAPocket(x, y)
 {
-  if((x%1 < 0.001) && (y%1<0.001))
+  if((x%1 < 0.0001) && (y%1<0.0001))
   {
     return true;
   }
