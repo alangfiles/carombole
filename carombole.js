@@ -40,6 +40,10 @@ function carombole()
   }
 
   return resultSum/numberOfValidResults;
+  console.log("Result: "+resultSum/numberOfValidResults);
+  console.log("ResultSum: "+resultSum);
+  console.log("numberOfValidResults: "+numberOfValidResults);
+  console.log("numberOfInfiniteBanks: "+numberOfInfiniteBanks);
 
 }
 
