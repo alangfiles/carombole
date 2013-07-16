@@ -58,10 +58,10 @@ function getNumberOfBounces(x, y, slopeDegree, precision, tries)
   var yLocal = y;
   var stepSize = precision;
   var numberOfBounces = 0;
-  var slope = Math.tan(slopeDegree);
+  var slope = Math.tan(slopeDegree * Math.PI / 180);
   if(isInAPocket(xLocal,yLocal))
   {
-    numberOfBounces = Math.floor(Math.abs(x%2)+Math.abs(y));
+    numberOfBounces = Math.floor(Math.abs(x%3)+Math.abs(y%2));
     return numberOfBounces;
   }
   else{
